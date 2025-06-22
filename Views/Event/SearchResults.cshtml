@@ -1,0 +1,21 @@
+﻿@model List<EventEase.Models.Event>
+
+<h2>Search Results</h2>
+
+@if (!Model.Any())
+{
+    <p>No events found.</p>
+}
+else
+{
+    <ul>
+        @foreach (var evt in Model)
+        {
+            <li>
+                <strong>@evt.EventName</strong> — @evt.EventDate.ToShortDateString()
+                <br />
+                @evt.Description
+            </li>
+        }
+    </ul>
+}
